@@ -5,19 +5,19 @@ import database from '../../firebase';
 
 const TinderCards = () => {
     const [people, setPeople] = useState([]);
-    useEffect(() => {
-        const unsubscribe = database
-            .collection('people')
-            .onSnapshot(snapshot => (
-                setPeople(snapshot.docs
-                    .map(doc => doc.data()))
-            ));
+    // useEffect(() => {
+    //     const unsubscribe = database
+    //         .collection('people')
+    //         .onSnapshot(snapshot => (
+    //             setPeople(snapshot.docs
+    //                 .map(doc => doc.data()))
+    //         ));
 
-        return () => {
-            // this is cleanup function...
-            unsubscribe();
-        }
-    }, [people]);
+    //     return () => {
+    //         // this is cleanup function...
+    //         unsubscribe();
+    //     }
+    // }, []);
     return (
         <div>
             <div className="tinderCards__cardContainer">
